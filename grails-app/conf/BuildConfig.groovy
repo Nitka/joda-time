@@ -15,11 +15,14 @@ grails.project.dependency.resolution = {
 		mavenCentral()
 		mavenRepo "http://repo.grails.org/grails/libs-releases"
 		mavenRepo "http://m2repo.spockframework.org/ext/"
+        mavenRepo "http://repo.grails.org/grails/plugins-releases/"
 	}
 
 	int grailsMajorVersion = grailsVersion.find(/^\d+/).toInteger()
 
 	dependencies {
+		compile 'joda-time:joda-time:2.8.2'
+
 		test("org.hamcrest:hamcrest-all:1.1") {
 			export = false
 		}
@@ -48,7 +51,7 @@ grails.project.dependency.resolution = {
 		build(":svn:1.0.2") {
 			export = false
 		}
-		test(":spock:0.6-SNAPSHOT") {
+		test(":spock:0.7") {
 			export = false
 		}
 	}
